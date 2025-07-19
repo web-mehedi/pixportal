@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload Photo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>📤 Upload Your Photos</h1>
+      <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="photos[]" accept="image/*" multiple required />
+        <button type="submit">Upload Now</button>
+      </form>
+      <?php if(isset($_GET['msg'])): ?>
+        <pre class="status"><?php echo htmlspecialchars($_GET['msg']); ?></pre>
+      <?php endif; ?>
+    </div>
+  </div>
+</body>
+</html>
